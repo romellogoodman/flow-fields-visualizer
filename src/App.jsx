@@ -134,6 +134,17 @@ function App() {
     const downloadButton = pane.addButton({ title: 'Download Points' });
     downloadButton.on('click', downloadPoints);
 
+    const linksFolder = pane.addFolder({ title: 'GitHub Links', expanded: false });
+    const visualizerButton = linksFolder.addButton({ title: 'Visualizer Repo' });
+    visualizerButton.on('click', () => {
+      window.open('https://github.com/romellogoodman/flow-fields-visualizer', '_blank');
+    });
+
+    const libraryButton = linksFolder.addButton({ title: 'Library Repo' });
+    libraryButton.on('click', () => {
+      window.open('https://github.com/romellogoodman/flow-fields', '_blank');
+    });
+
     return () => {
       pane.dispose();
     };
